@@ -4,6 +4,10 @@ Created on 7 févr. 2020
 @author: clinton
 '''
 
+from math import *
+import math
+
+
 class Robot:
     '''
     classe qui represente le robot,
@@ -59,20 +63,67 @@ class Robot:
     def recule(self): #si le robot fait marche arrière
         self.setPos(self.x-self.dx, self.y-self.dy)
         
-    '''
-    def tourneDroite(self):
-        newdx= self.dx
-        newdy= self.dy
-        self.setDir(newdx, newdy)
-    '''
     
-        
+    def tournerDroite(self):
+        '''
+            tourner d'un angle th= +math.pi/2
+        '''
+        #cosx= cos(self.dx)
+        #sinx= sin(self.dy)
+        newdx= self.dx*cos(math.pi/2)-self.dy*sin(math.pi/2)
+        newdy= self.dx*sin(math.pi/2)+self.dy*cos(math.pi/2)
+        self.setDir(newdx, newdy)
+    
+    def tournerGauche(self):
+        '''
+            tourner d'un angle th= -math.pi/2
+        '''
+        #cosx= cos(self.dx)
+        #sinx= sin(self.dy)
+        newdx= self.dx*cos(-math.pi/2)-self.dy*sin(-math.pi/2)
+        newdy= self.dx*sin(-math.pi/2)+self.dy*cos(-math.pi/2)
+        self.setDir(newdx, newdy)
+ 
+ 
+ 
+
+ 
+'''        
 r= Robot(1,1,"rob")
 r.affiche()
 print(r.getDX())
+print(r.getDY())
+
+print("rotation droite")
+r.tournerDroite()    
+r.affiche()
+print(r.getDX())
+print(r.getDY())
+
+print("rotation droite")
+r.tournerDroite()    
+r.affiche()
+print(r.getDX())
+print(r.getDY())
     
-        
-        
+print("rotation droite")
+r.tournerDroite()    
+r.affiche()
+print(r.getDX())
+print(r.getDY())
+    
+print("rotation gauche")
+r.tournerGauche()   
+r.affiche()
+print(r.getDX())
+print(r.getDY())
+
+'''
+
+'''    
+print(cos(math.pi/2))    
+print(sin(math.pi/2))    
+'''        
     
 
         
